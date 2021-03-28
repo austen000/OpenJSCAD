@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="min.css" type="text/css">
+  <title>Home</title>
+ <!-- <script>
+    // == OpenJSCAD.org, Copyright (c) 2017, Licensed under MIT License
+    const AlertUserOfUncaughtExceptions = require('./errorDispatcher')
+
+    const version = require('../../package.json').version
+    const Processor = require('../jscad/processor')
+
+    var gProcessor = null
+
+    function init () {
+    const versionText = 'OpenJSCAD.org Version ' + version
+    console.log(versionText)
+    
+    // Show all exceptions to the user: // WARNING !! this is not practical at dev time
+    AlertUserOfUncaughtExceptions()
+
+    let viewer = document.getElementById('viewerContext')
+    let design = viewer.getAttribute('design-url')
+
+    gProcessor = new Processor(viewer)
+
+    // load the given design
+    if (design) {
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', design, true)
+        gProcessor.setStatus('Loading ' + design + " <img id=busy src='imgs/busy.gif'>")
+
+        xhr.onload = function () {
+        var source = this.responseText
+        // console.log(source);
+
+        if (design.match(/\.jscad$/i) || design.match(/\.js$/i)) {
+            gProcessor.setStatus('Processing ' + design + " <img id=busy src='imgs/busy.gif'>")
+            gProcessor.setJsCad(source, design)
+        }
+        }
+        xhr.send()
+    }
+    }
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+    init()
+    })
+
+</script>-->
+</head>
+
+<body>
+  <script type="text/javascript" src="dist/min.js">
+    function addCube() {
+        gProcessor = new Processor(document.getElementById("viewerContext"));
+        var sampleCube = "function main() { return cube(); }"
+        gProcessor.setJsCad(sampleCube);
+    }
+    document.getElementbyId("addCubeButton").addEventListener("click", addCube(), true);
+  </script>
+  <button id="addCubeButton">Add Cube</button>
+  <div>
+  <div class="jscad-container">
+    <div oncontextmenu="return false;" id="viewerContext"></div>
+    <div id="header"></div>
+  </div>
+</body>
+</html>
